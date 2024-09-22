@@ -1,0 +1,8 @@
+Loading safetensors checkpoint shards:   0% Completed | 0/12 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:   8% Completed | 1/12 [00:47<08:47, 47.99s/it]
+Loading safetensors checkpoint shards:  17% Completed | 2/12 [01:34<07:51, 47.11s/it]
+Loading safetensors checkpoint shards:  25% Completed | 3/12 [01:41<04:17, 28.63s/it]
+Loading safetensors checkpoint shards:  33% Completed | 4/12 [02:27<04:44, 35.59s/it]
+Loading safetensors checkpoint shards:  42% Completed | 5/12 [03:15<04:39, 39.96s/it]
+Loading safetensors checkpoint shards:  50% Completed | 6/12 [04:01<04:13, 42.18s/it]
+Loading safetensors checkpoint shards:  58% Completed | 7/12 [04:48<03:37, 43.57s/it]

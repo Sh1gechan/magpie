@@ -45,7 +45,7 @@ def get_args():
     parser.add_argument("--tensor_parallel_size", type=int, default=1, help="Number of GPUs to use for tensor parallelism. Only used for Llama 70B models.")
     parser.add_argument("--gpu_memory_utilization", type=float, default=0.95)
     parser.add_argument("--swap_space", type=float, default=2.0)
-    parser.add_argument("--output_folder", type=str, default="../data")
+    parser.add_argument("--output_folder", type=str, default="data")
     parser.add_argument("--job_name", type=str, default=None, help="Job Name. Get from the script.")
     parser.add_argument("--timestamp", type=int, default=int(time.time()), help="Timestamp for the job. Also used as the random seed.")
     parser.add_argument("--seed", type=int, default=None, help="Random seed.")
@@ -105,7 +105,7 @@ elif args.engine == "hf":
 
 
 # Obtain config from configs/model_configs.json
-with open("../configs/model_configs.json", "r", encoding="utf-8") as f:
+with open("configs/model_configs.json", "r", encoding="utf-8") as f:
     model_configs = json.load(f)
     model_config = model_configs[args.model_path]
     if args.control_tasks:
@@ -236,12 +236,12 @@ for rounds in tqdm(range(args.repeat)):
 
     # Save the checkpoints every args.checkpoint_every rounds
     if rounds % args.checkpoint_every == 0:
-        with open(output_dir, "w") as f:
-            json.dump(results, f, indent=2)
+        with open(output_dir, "w", encoding="utf-8") as f:
+            json.dump(results, f, indent=2, ensure_ascii=False)
         print(f"Checkpoint saved. Total prompts: {len(results)}")
 
 # Save the final results
-with open(output_dir, "w") as f:
-    json.dump(results, f, indent=2)
+with open(output_dir, "w", encoding="utf-8") as f:
+    json.dump(results, f, indent=2, ensure_ascii=False)
 
 print(f"Instruction generated from {args.model_path}. Total prompts: {len(results)}")

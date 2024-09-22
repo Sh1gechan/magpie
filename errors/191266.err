@@ -1,0 +1,17 @@
+Loading safetensors checkpoint shards:   0% Completed | 0/12 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:   8% Completed | 1/12 [00:41<07:37, 41.56s/it]
+Loading safetensors checkpoint shards:  17% Completed | 2/12 [01:23<06:56, 41.65s/it]
+Loading safetensors checkpoint shards:  25% Completed | 3/12 [01:29<03:47, 25.32s/it]
+Loading safetensors checkpoint shards:  33% Completed | 4/12 [02:10<04:13, 31.74s/it]
+Loading safetensors checkpoint shards:  42% Completed | 5/12 [02:53<04:09, 35.64s/it]
+Loading safetensors checkpoint shards:  50% Completed | 6/12 [03:34<03:46, 37.67s/it]
+Loading safetensors checkpoint shards:  58% Completed | 7/12 [04:16<03:14, 38.96s/it]
+Loading safetensors checkpoint shards:  67% Completed | 8/12 [04:59<02:40, 40.11s/it]
+Loading safetensors checkpoint shards:  75% Completed | 9/12 [05:39<02:00, 40.23s/it]
+Loading safetensors checkpoint shards:  83% Completed | 10/12 [06:22<01:21, 40.94s/it]
+Loading safetensors checkpoint shards:  92% Completed | 11/12 [07:03<00:41, 41.14s/it]
+Loading safetensors checkpoint shards: 100% Completed | 12/12 [07:45<00:00, 41.28s/it]
+Loading safetensors checkpoint shards: 100% Completed | 12/12 [07:45<00:00, 38.78s/it]
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][Aslurmstepd-a100: error: *** JOB 191266 ON a100 CANCELLED AT 2024-09-22T21:35:09 ***

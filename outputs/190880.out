@@ -1,0 +1,19 @@
+Instruction Generation Manager. Arguments: Namespace(model_path='google/gemma-2-27b-it', temperature=1.0, top_p=1.0, n=500000, repeat=None, total_prompts=1000, max_tokens=2048, max_model_len=4096, early_stopping=True, system_prompt=False, sanitize=False, logits_processor=False, control_tasks='code', shuffle=True, skip_special_tokens=True, checkpoint_every=100, engine='vllm', device='0', dtype='bfloat16', tensor_parallel_size=1, gpu_memory_utilization=0.95, swap_space=2.0, output_folder='data', job_name=None, timestamp=1726400825, seed=None)
+WARNING 09-15 20:47:05 utils.py:721] Gemma 2 uses sliding window attention for every odd layer, which is currently not supported by vLLM. Disabling sliding window and capping the max length to the sliding window size (4096).
+INFO 09-15 20:47:05 llm_engine.py:184] Initializing an LLM engine (v0.5.5) with config: model='google/gemma-2-27b-it', speculative_config=None, tokenizer='google/gemma-2-27b-it', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, rope_theta=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), observability_config=ObservabilityConfig(otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=1726400825, served_model_name=google/gemma-2-27b-it, use_v2_block_manager=False, enable_prefix_caching=True)
+INFO 09-15 20:47:07 model_runner.py:879] Starting to load model google/gemma-2-27b-it...
+INFO 09-15 20:47:08 weight_utils.py:236] Using model weights format ['*.safetensors']
+INFO 09-15 20:47:14 model_runner.py:890] Loading model weights took 50.7164 GB
+INFO 09-15 20:47:18 gpu_executor.py:121] # GPU blocks: 3793, # CPU blocks: 356
+INFO 09-15 20:47:19 model_runner.py:1181] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 09-15 20:47:19 model_runner.py:1185] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 09-15 20:47:38 model_runner.py:1300] Graph capturing finished in 19 secs.
+INFO 09-15 20:47:38 block_manager_v1.py:263] Automatic prefix caching is enabled.
+Control task: {args.control_tasks}
+Pre-query template: <bos><start_of_turn>user
+
+You are an AI assistant designed to provide helpful, step-by-step guidance on coding problems. You can generate a wide variety of coding problems. You can generate a wide variety of problems, including algorithmic and data structures, informational mathematics, real-world problems using programming language frameworks, etc. No reply is required; just think of one problem involving Python code to take up. 日本語で回答してください。
+
+
+Stop tokens: ['<eos>', '<bos>', '<end_of_turn>', 'assistant', '\n']
+Stop token ids: [1, 2, 107]

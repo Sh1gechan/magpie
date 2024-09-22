@@ -1,0 +1,42 @@
+Instruction Generation Manager. Arguments: Namespace(model_path='google/gemma-2-27b-it', temperature=1.0, top_p=1.0, n=200, repeat=None, total_prompts=50000, max_tokens=2048, max_model_len=4096, early_stopping=True, system_prompt=False, sanitize=False, logits_processor=False, control_tasks='code', shuffle=True, skip_special_tokens=True, checkpoint_every=100, engine='vllm', device='0,1', dtype='bfloat16', tensor_parallel_size=2, gpu_memory_utilization=0.95, swap_space=2.0, output_folder='data', job_name=None, timestamp=1727011767, seed=None)
+WARNING 09-22 22:29:28 utils.py:721] Gemma 2 uses sliding window attention for every odd layer, which is currently not supported by vLLM. Disabling sliding window and capping the max length to the sliding window size (4096).
+INFO 09-22 22:29:28 config.py:813] Defaulting to use mp for distributed inference
+INFO 09-22 22:29:28 llm_engine.py:184] Initializing an LLM engine (v0.5.5) with config: model='google/gemma-2-27b-it', speculative_config=None, tokenizer='google/gemma-2-27b-it', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, rope_theta=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=2, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), observability_config=ObservabilityConfig(otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=1727011767, served_model_name=google/gemma-2-27b-it, use_v2_block_manager=False, enable_prefix_caching=True)
+WARNING 09-22 22:29:29 multiproc_gpu_executor.py:59] Reducing Torch parallelism from 8 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+INFO 09-22 22:29:29 custom_cache_manager.py:17] Setting Triton cache manager to: vllm.triton_utils.custom_cache_manager:CustomCacheManager
+[1;36m(VllmWorkerProcess pid=2277929)[0;0m INFO 09-22 22:29:30 multiproc_worker_utils.py:215] Worker ready; awaiting tasks
+INFO 09-22 22:29:32 utils.py:975] Found nccl from library libnccl.so.2
+[1;36m(VllmWorkerProcess pid=2277929)[0;0m INFO 09-22 22:29:32 utils.py:975] Found nccl from library libnccl.so.2
+INFO 09-22 22:29:32 pynccl.py:63] vLLM is using nccl==2.20.5
+[1;36m(VllmWorkerProcess pid=2277929)[0;0m INFO 09-22 22:29:32 pynccl.py:63] vLLM is using nccl==2.20.5
+INFO 09-22 22:29:34 custom_all_reduce_utils.py:234] reading GPU P2P access cache from /home/ishida/.cache/vllm/gpu_p2p_access_cache_for_0,1.json
+[1;36m(VllmWorkerProcess pid=2277929)[0;0m INFO 09-22 22:29:34 custom_all_reduce_utils.py:234] reading GPU P2P access cache from /home/ishida/.cache/vllm/gpu_p2p_access_cache_for_0,1.json
+WARNING 09-22 22:29:34 custom_all_reduce.py:131] Custom allreduce is disabled because your platform lacks GPU P2P capability or P2P test failed. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[1;36m(VllmWorkerProcess pid=2277929)[0;0m WARNING 09-22 22:29:34 custom_all_reduce.py:131] Custom allreduce is disabled because your platform lacks GPU P2P capability or P2P test failed. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+INFO 09-22 22:29:34 shm_broadcast.py:235] vLLM message queue communication handle: Handle(connect_ip='127.0.0.1', local_reader_ranks=[1], buffer=<vllm.distributed.device_communicators.shm_broadcast.ShmRingBuffer object at 0x7f9e29e85eb0>, local_subscribe_port=59151, remote_subscribe_port=None)
+INFO 09-22 22:29:34 model_runner.py:879] Starting to load model google/gemma-2-27b-it...
+[1;36m(VllmWorkerProcess pid=2277929)[0;0m INFO 09-22 22:29:34 model_runner.py:879] Starting to load model google/gemma-2-27b-it...
+[1;36m(VllmWorkerProcess pid=2277929)[0;0m INFO 09-22 22:29:35 weight_utils.py:236] Using model weights format ['*.safetensors']
+INFO 09-22 22:29:36 weight_utils.py:236] Using model weights format ['*.safetensors']
+INFO 09-22 22:38:25 model_runner.py:890] Loading model weights took 25.3610 GB
+[1;36m(VllmWorkerProcess pid=2277929)[0;0m INFO 09-22 22:38:25 model_runner.py:890] Loading model weights took 25.3610 GB
+INFO 09-22 22:38:45 distributed_gpu_executor.py:56] # GPU blocks: 16204, # CPU blocks: 712
+[1;36m(VllmWorkerProcess pid=2277929)[0;0m INFO 09-22 22:38:46 model_runner.py:1181] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+[1;36m(VllmWorkerProcess pid=2277929)[0;0m INFO 09-22 22:38:46 model_runner.py:1185] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 09-22 22:38:46 model_runner.py:1181] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 09-22 22:38:46 model_runner.py:1185] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 09-22 22:39:42 model_runner.py:1300] Graph capturing finished in 56 secs.
+[1;36m(VllmWorkerProcess pid=2277929)[0;0m INFO 09-22 22:39:42 model_runner.py:1300] Graph capturing finished in 56 secs.
+INFO 09-22 22:39:42 block_manager_v1.py:263] Automatic prefix caching is enabled.
+Control task: {args.control_tasks}
+Pre-query template: <bos><start_of_turn>user
+
+You are an AI assistant designed to provide helpful, step-by-step guidance on coding problems. You can generate a wide variety of coding problems. You can generate a wide variety of problems, including algorithmic and data structures, informational mathematics, real-world problems using programming language frameworks, etc. Generate questions that would appear on a coding exam or in the real world. 日本語で回答してください。質問は必ず「のプログラムを書いてください。」というフレーズで終わらせてください。
+
+
+Stop tokens: ['<eos>', '<bos>', '<end_of_turn>', 'assistant', '\n']
+Stop token ids: [1, 2, 107]
+Checkpoint saved. Total prompts: 200
+Checkpoint saved. Total prompts: 20200
+Checkpoint saved. Total prompts: 40200
+Instruction generated from google/gemma-2-27b-it. Total prompts: 50000

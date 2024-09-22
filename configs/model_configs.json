@@ -296,7 +296,8 @@
     "stop_tokens_assistant": [
       "assistant"
     ],
-    "pre_query_template": "<bos><start_of_turn>user\n\n"
+    "pre_query_template": "<bos><start_of_turn>user\n\n",
+    "pre_query_template_code":"<bos><start_of_turn>user\n\nYou are an AI assistant designed to provide helpful, step-by-step guidance on coding problems. You can generate a wide variety of coding problems. You can generate a wide variety of problems, including algorithmic and data structures, informational mathematics, real-world problems using programming language frameworks, etc. Generate questions that would appear on a coding exam on informatics that you are familiar with. Please include the phrase 'Please write the program for ~' at the end of the question. 日本語で回答してください。\n\n"
   },
   "google/gemma-2-9b-it": {
     "model_name": "google/gemma-2-9b-it",
@@ -433,5 +434,53 @@
       "assistant"
     ],
     "pre_query_template": "<｜begin▁of▁sentence｜>User: "
-  }
+  },
+  "mistralai/Mistral-Nemo-Instruct-2407": {
+    "model_name": "mistralai/Mistral-Nemo-Instruct-2407",
+    "stop_tokens": [
+      "<s>",
+      "</s>",
+      "[INST]",
+      "[/INST]"
+    ],
+    "stop_token_ids": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "stop_tokens_assistant": [
+      "assistant"
+    ],
+    "pre_query_template": "<s> [INST] ",
+    "mt_append_template": "[INST] user [/INST] ",
+    "pre_query_template_with_system_prompt": "<s> [INST] system [/INST] \n\nYou are a helpful and polite assistant who provides clear and detailed responses to user inquiries.<INST>user</INST>\n\n",
+    "pre_query_template_math": "<s> [INST] system [/INST] \n\nYou are an AI designed to help users solve math problems. Provide detailed, step-by-step solutions to various mathematical problems.\n\n<INST>user</INST>\n\n",
+    "pre_query_template_code": "<s> [INST] system [/INST] \n\nYou are an AI assistant designed to provide helpful, step-by-step guidance on coding problems. The user will ask you a wide range of coding questions.\nYour purpose is to assist users in understanding coding concepts, working through code, and arriving at the correct solutions. 日本語で応答してください。<INST>user</INST>\n\n",
+    "pre_query_template_translation": "<s> [INST] system [/INST] \n\nYou are a multilingual AI assistant capable of providing contextually appropriate translations between various languages. Your goal is to maintain accuracy and preserve meaning while translating text.<INST>user</INST>\n\n"
+    },
+    "mistralai/Mixtral-8x22B-Instruct-v0.1": {
+    "model_name": "mistralai/Mixtral-8x22B-Instruct-v0.1",
+    "stop_tokens": [
+        "<s>",
+        "</s>",
+        "[INST]",
+        "[/INST]"
+    ],
+    "stop_token_ids": [
+        1,
+        2,
+        3,
+        4
+    ],
+    "stop_tokens_assistant": [
+        "assistant"
+    ],
+    "pre_query_template": "<s> [INST] ",
+    "mt_append_template": "[INST] user [/INST] ",
+    "pre_query_template_with_system_prompt": "<s> [INST] system [/INST] \n\nYou are a helpful assistant who answers politely and thoroughly.<INST>user</INST>\n\n",
+    "pre_query_template_math": "<s> [INST] system [/INST] \n\nYou are a math assistant that helps users solve problems step-by-step.<INST>user</INST>\n\n",
+    "pre_query_template_code": "<s> [INST] system [/INST] \n\nYou are an AI assistant designed to provide helpful, step-by-step guidance on coding problems. The user will ask you a wide range of coding questions.\nYour purpose is to assist users in understanding coding concepts, working through code, and arriving at the correct solutions. 日本語で応答してください。<INST>user</INST>\n\n",
+    "pre_query_template_translation": "<s> [INST] system [/INST] \n\nYou assist with translations while maintaining contextual accuracy.<INST>user</INST>\n\n"
+}
 }

@@ -1,0 +1,46 @@
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/ishida/magpie/exp/gen_ins.py", line 88, in <module>
+[rank0]:     llm = LLM(model=args.model_path, 
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/entrypoints/llm.py", line 175, in __init__
+[rank0]:     self.llm_engine = LLMEngine.from_engine_args(
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/engine/llm_engine.py", line 473, in from_engine_args
+[rank0]:     engine = cls(
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/engine/llm_engine.py", line 270, in __init__
+[rank0]:     self.model_executor = executor_class(
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/executor/executor_base.py", line 46, in __init__
+[rank0]:     self._init_executor()
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/executor/gpu_executor.py", line 39, in _init_executor
+[rank0]:     self.driver_worker.load_model()
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/worker/worker.py", line 182, in load_model
+[rank0]:     self.model_runner.load_model()
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/worker/model_runner.py", line 881, in load_model
+[rank0]:     self.model = get_model(model_config=self.model_config,
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/model_executor/model_loader/__init__.py", line 19, in get_model
+[rank0]:     return loader.load_model(model_config=model_config,
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/model_executor/model_loader/loader.py", line 341, in load_model
+[rank0]:     model = _initialize_model(model_config, self.load_config,
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/model_executor/model_loader/loader.py", line 170, in _initialize_model
+[rank0]:     return build_model(
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/model_executor/model_loader/loader.py", line 155, in build_model
+[rank0]:     return model_class(config=hf_config,
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/model_executor/models/mixtral.py", line 344, in __init__
+[rank0]:     self.model = MixtralModel(config,
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/model_executor/models/mixtral.py", line 270, in __init__
+[rank0]:     self.start_layer, self.end_layer, self.layers = make_layers(
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/model_executor/models/utils.py", line 195, in make_layers
+[rank0]:     [PPMissingLayer() for _ in range(start_layer)] + [
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/model_executor/models/utils.py", line 196, in <listcomp>
+[rank0]:     maybe_offload_to_cpu(layer_fn(prefix=f"{prefix}.{idx}"))
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/model_executor/models/mixtral.py", line 272, in <lambda>
+[rank0]:     lambda prefix: MixtralDecoderLayer(
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/model_executor/models/mixtral.py", line 206, in __init__
+[rank0]:     self.block_sparse_moe = MixtralMoE(
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/model_executor/models/mixtral.py", line 83, in __init__
+[rank0]:     self.experts = FusedMoE(num_experts=num_experts,
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/model_executor/layers/fused_moe/layer.py", line 194, in __init__
+[rank0]:     self.quant_method.create_weights(
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/vllm/model_executor/layers/fused_moe/layer.py", line 50, in create_weights
+[rank0]:     w2_weight = torch.nn.Parameter(torch.empty(num_experts,
+[rank0]:   File "/home/ishida/magpie/venv/lib/python3.9/site-packages/torch/utils/_device.py", line 79, in __torch_function__
+[rank0]:     return func(*args, **kwargs)
+[rank0]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.50 GiB. GPU 0 has a total capacity of 79.15 GiB of which 421.94 MiB is free. Including non-PyTorch memory, this process has 78.66 GiB memory in use. Of the allocated memory 78.18 GiB is allocated by PyTorch, and 32.00 KiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

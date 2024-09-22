@@ -1,6 +1,6 @@
 # LLM
 # flash-attn[--no-build-isolation]
-vllm==0.5.4
+vllm==0.5.5
 transformers
 sentence-transformers
 sentencepiece
@@ -31,3 +31,6 @@ ipykernel
 lingua-language-detector
 faiss-gpu
 ml_collections
+
+
+numpy < 2.0.0
